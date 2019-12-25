@@ -1,13 +1,7 @@
 <?php
-
-spl_autoload_register('myAutoloader');
-function myAutoloader($className){
-    include 'classes/' . $className . '.php';
-}
-
-
-
+require 'autoload.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,10 +36,7 @@ function myAutoloader($className){
           echo '<p class="blog-post-meta">' . $post['created_at'] . ' by ' . '<a href="#">' . $post['author'] . '</a></p>';
           echo '<p>' . $post['body'] . '</p><hr></div>';
         }
-        /*
-        <a id=' href="http://"></a>
         
-        */
       ?>
         
 

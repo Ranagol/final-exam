@@ -1,8 +1,5 @@
 <?php
-spl_autoload_register('myAutoloader');
-function myAutoloader($className){
-  include 'classes/' . $className . '.php';
-}
+require 'autoload.php';
 ?>
 
 
@@ -23,12 +20,10 @@ function myAutoloader($className){
 
   <?php
     require 'elements/header.php';
-    //var_dump($_GET);
     $connect = new Db;
     $connect->connectToDb();
     $singlePost = $connect->getSinglePost($_GET['id']);
     $comments = $connect->getComments($_GET['id']);
-    //var_dump($comments);
   ?>
 
   <main role="main" class="container">
@@ -59,7 +54,7 @@ function myAutoloader($className){
         echo '<h4 class="blog-post">Komentari</h4>';
         echo '<ul>';
         foreach ($comments as $comment) {
-          echo '<li>' . $comment['author'] . ': ' . $comment['text'].'</li><hr>'; 
+          echo '<li>' . $comment['author'] . ': ' . $comment['text'] . '</li><hr>'; 
         }
         echo '</ul>';
       ?>

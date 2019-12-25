@@ -7,6 +7,7 @@ class Db{
   public $conn;
   private $dbname = "final-exam";
 
+  
   public function connectToDb() {
     // Create connection
     $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
