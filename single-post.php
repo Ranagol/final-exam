@@ -27,7 +27,8 @@ function myAutoloader($className){
     $connect = new Db;
     $connect->connectToDb();
     $singlePost = $connect->getSinglePost($_GET['id']);
-    //var_dump($singlePost);
+    $comments = $connect->getComments($_GET['id']);
+    //var_dump($comments);
   ?>
 
   <main role="main" class="container">
@@ -35,12 +36,20 @@ function myAutoloader($className){
     <div class="row">
       <div class="col-sm-8 blog-main">
       <?php
+        //OVO JE POST DEO
         echo '<div class="blog-post">';
         echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $singlePost[0]["id"] . '">' . $singlePost[0]["title"] . '</a>' . '</h2>';
         echo '<p class="blog-post-meta">' . $singlePost[0]['created_at'] . ' by ' . '<a href="#">' . $singlePost[0]['author'] . '</a></p>';
         echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
-
+        //OVO JE COMMENT DEO
+        echo '<h4 class="blog-post">Komentari</h4>';
+        echo '<ul>';
+        foreach ($comments as $comment) {
+          echo '<li>' . $comment['author'] . ': ' . $comment['text'].'</li><hr>'; 
+        }
+        echo '</ul>';
       ?>
+
 
       </div><!-- /.blog-main -->
     </div><!-- /.row -->

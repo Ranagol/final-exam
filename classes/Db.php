@@ -37,7 +37,14 @@ class Db{
     $singlePost = mysqli_fetch_all($result, MYSQLI_ASSOC);
     //var_dump($singlePost);
     return $singlePost;
+  }
 
+  public function getComments($id){
+    $sql = "SELECT * FROM comments WHERE post_id = $id";
+    $result = mysqli_query($this->conn, $sql);
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    //var_dump($comments);
+    return $comments;
   }
 
   
