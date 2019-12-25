@@ -1,3 +1,14 @@
+<?php
+
+spl_autoload_register('myAutoloader');
+function myAutoloader($className){
+    include 'classes/' . $className . '.php';
+}
+$connect = new Db;
+$connect->connectToDb();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
