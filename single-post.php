@@ -1,3 +1,11 @@
+<?php
+spl_autoload_register('myAutoloader');
+function myAutoloader($className){
+    include 'classes/' . $className . '.php';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +23,17 @@
 
   <?php
     require 'elements/header.php';
-  
+    //var_dump($_GET);
+    
   ?>
 
   <div class='container'>
     <h2>Single post</h2>
+    <?php
+      $connect = new Db;
+      $connect->connectToDb();
+      $singlePost = $connect->getSinglePost($_GET['id']);
+    ?>
   </div>
 
 

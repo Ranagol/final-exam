@@ -26,39 +26,38 @@ function myAutoloader($className){
 
   <?php
     require 'elements/header.php';
+    $connect = new Db;
+    $connect->connectToDb();
+    $posts = $connect->getPosts();
   ?>
 
-  <div class='container'>
-    <h2>Posts</h2>
-    <?php
-      $connect = new Db;
-      $connect->connectToDb();
-      $posts = $connect->getPosts();
-      echo "<table class = 'table'>";
-      foreach ($posts as $post) {
-        //var_dump($post);
-        echo '<tr><td>';
-        echo '<a href="single-post.php?id=' . $post["id"] . '">';
-        echo $post["title"] . '</a>';
-        /*
-        <?php echo "<a href='attendance_add.php?id=".$row['employee_id']."'>" . "</a> "; ?>
-        <a href="http://">IDE MEGY A TITLE</a>
-        */
-        echo "</td><td>";
-        echo $post["author"] . "</td><td> ";
-        echo $post["created_at"] ."</td></tr>";
-      }
-      echo '</table>';
-    ?>
-  </div>
+  <main role="main" class="container">
+    
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+      <?php
+        foreach ($posts as $post) {     
+          echo '<div class="blog-post">';
+          echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $post["id"] . '">' . $post["title"] . '</a>' . '</h2>';
+          echo '<p class="blog-post-meta">' . $post['created_at'] . ' by ' . '<a href="#">' . $post['author'] . '</a></p>';
+          echo '<p>' . $post['body'] . '</p><hr></div>';
+        }
+      ?>
+        
+
+        <nav class="blog-pagination">
+            <a class="btn btn-outline-primary" href="#">Older</a>
+            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+        </nav>
+
+      </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+  </main><!-- /.container -->
 
 
   <?php
   require 'elements/footer.php';
   ?>
-
-
-
 </body>
 
 </html>

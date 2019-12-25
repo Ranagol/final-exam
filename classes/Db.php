@@ -1,8 +1,6 @@
 <?php
 
-class Db
-{
-
+class Db{
   private $servername = "localhost";
   private $username = "root";
   private $password = "";
@@ -20,7 +18,7 @@ class Db
   }
 
   public function getPosts(){//ORIGINAL GETPOSTS
-    $sql = "SELECT id, title, author, created_at FROM posts ORDER BY created_at DESC";
+    $sql = "SELECT id, title,body, author, created_at FROM posts ORDER BY created_at DESC";
     $result = mysqli_query($this->conn, $sql);
     $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);//creating loopable arrays
     //var_dump($posts);
@@ -33,25 +31,16 @@ class Db
     return $posts;
   }
 
-  /*
-  public function getPosts(){//ORIGINAL GETPOSTS
-    $sql = "SELECT title, author, created_at FROM posts ORDER BY created_at DESC";
+  public function getSinglePost($id){
+    $sql = "SELECT id, title, body, author, created_at FROM posts WHERE id = $id";
     $result = mysqli_query($this->conn, $sql);
-    //$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    var_dump($posts);
+    $singlePost = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    var_dump($singlePost);
+    return $singlePost;
 
-    if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-      echo "<table class = 'table' ><tr><th>Naslov</th><th>Autor</th><th>Datum</th></tr>";
-      while($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>" . '<a href="single-post.php">' . $row["title"] . '</a>' . "</td><td>" . $row["author"] . "</td><td> " . $row["created_at"] ."</td></tr>";
-      }
-      echo "</table>";
-    } else {
-      echo "0 results";
-    }
   }
-  */
+
+  
   
 }
 
