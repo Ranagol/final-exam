@@ -24,17 +24,29 @@ function myAutoloader($className){
   <?php
     require 'elements/header.php';
     //var_dump($_GET);
-    
+    $connect = new Db;
+    $connect->connectToDb();
+    $singlePost = $connect->getSinglePost($_GET['id']);
+    //var_dump($singlePost);
   ?>
 
-  <div class='container'>
-    <h2>Single post</h2>
-    <?php
-      $connect = new Db;
-      $connect->connectToDb();
-      $singlePost = $connect->getSinglePost($_GET['id']);
-    ?>
-  </div>
+  <main role="main" class="container">
+    
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+      <?php
+        echo '<div class="blog-post">';
+        echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $singlePost[0]["id"] . '">' . $singlePost[0]["title"] . '</a>' . '</h2>';
+        echo '<p class="blog-post-meta">' . $singlePost[0]['created_at'] . ' by ' . '<a href="#">' . $singlePost[0]['author'] . '</a></p>';
+        echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
+
+      ?>
+
+      </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+  </main><!-- /.container -->
+
+
 
 
   <?php

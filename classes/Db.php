@@ -35,7 +35,7 @@ class Db{
     $sql = "SELECT id, title, body, author, created_at FROM posts WHERE id = $id";
     $result = mysqli_query($this->conn, $sql);
     $singlePost = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    var_dump($singlePost);
+    //var_dump($singlePost);
     return $singlePost;
 
   }
