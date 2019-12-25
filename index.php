@@ -1,13 +1,5 @@
-<?php
 
-spl_autoload_register('myAutoloader');
-function myAutoloader($className){
-    include 'classes/' . $className . '.php';
-}
-$connect = new Db;
-$connect->connectToDb();
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,26 +18,12 @@ $connect->connectToDb();
 
     <?php
     require 'elements/header.php';
-    $connect = new Db;
-
-
+    
     ?>
 
-    <ul>
-        <li>Post 1</li>
-        <li>Post 1</li>
-        <li>Post 1</li>
-        <li>Post 1</li>
-    </ul>
-
-
-
     <div class='container'>
-        <h1>blabla</h1>
+        <h2>Welcome to our awesome blog site!</h2>
     </div>
-
-
-
 
 
     <?php

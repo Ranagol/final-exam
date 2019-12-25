@@ -2,7 +2,8 @@
   <div class="blog-masthead">
     <div class="container">
       <nav class="nav">
-        <a class="nav-link active" href="index.php">Pocetna strana</a>
+        <a class="nav-link active" href="index.php">Pocetna strana</a><!--'active' namestiti svugde kako treba-->
+        <a class="nav-link" href="posts.php">Postovi</a>
         <a class="nav-link" href="create-post.php">Kreiraj novi post</a>
         <a class="nav-link" href="comments.php">Komentari</a>
       </nav>
