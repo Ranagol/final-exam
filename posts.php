@@ -37,7 +37,16 @@ function myAutoloader($className){
       echo "<table class = 'table'>";
       foreach ($posts as $post) {
         //var_dump($post);
-        echo "<tr><td>" . '<a href="single-post.php">' . $post["title"] . '</a>' . "</td><td>" . $post["author"] . "</td><td> " . $post["created_at"] ."</td></tr>";
+        echo '<tr><td>';
+        echo '<a href="single-post.php?id=' . $post["id"] . '">';
+        echo $post["title"] . '</a>';
+        /*
+        <?php echo "<a href='attendance_add.php?id=".$row['employee_id']."'>" . "</a> "; ?>
+        <a href="http://">IDE MEGY A TITLE</a>
+        */
+        echo "</td><td>";
+        echo $post["author"] . "</td><td> ";
+        echo $post["created_at"] ."</td></tr>";
       }
       echo '</table>';
     ?>
