@@ -22,6 +22,7 @@ function myAutoloader($className){
 </head>
 
 <body>
+  
 
   <?php
     require 'elements/header.php';
@@ -32,7 +33,13 @@ function myAutoloader($className){
     <?php
       $connect = new Db;
       $connect->connectToDb();
-      $connect->getPosts();
+      $posts = $connect->getPosts();
+      echo "<table class = 'table'>";
+      foreach ($posts as $post) {
+        //var_dump($post);
+        echo "<tr><td>" . '<a href="single-post.php">' . $post["title"] . '</a>' . "</td><td>" . $post["author"] . "</td><td> " . $post["created_at"] ."</td></tr>";
+      }
+      echo '</table>';
     ?>
   </div>
 
@@ -40,6 +47,8 @@ function myAutoloader($className){
   <?php
   require 'elements/footer.php';
   ?>
+
+
 
 </body>
 
