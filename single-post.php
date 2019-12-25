@@ -36,12 +36,26 @@ function myAutoloader($className){
     <div class="row">
       <div class="col-sm-8 blog-main">
       <?php
+        
         //OVO JE POST DEO
         echo '<div class="blog-post">';
         echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $singlePost[0]["id"] . '">' . $singlePost[0]["title"] . '</a>' . '</h2>';
         echo '<p class="blog-post-meta">' . $singlePost[0]['created_at'] . ' by ' . '<a href="#">' . $singlePost[0]['author'] . '</a></p>';
         echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
-        //OVO JE COMMENT DEO
+      ?>
+      <!--NAPISI KOMENTAR-->
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="komentari">Napisi komentar</label>
+          <textarea class="form-control" id = 'komentari' name="comment" placeholder = "Ja mislim da..."  rows="3"></textarea>
+        </div>
+        <input class="btn btn-success" type="submit" value="Posalji komentar">
+      </form>
+       
+      
+      <?php  
+        //KOMENTARI POVUCENI IZ DB
+        echo '<hr>';
         echo '<h4 class="blog-post">Komentari</h4>';
         echo '<ul>';
         foreach ($comments as $comment) {
@@ -49,7 +63,6 @@ function myAutoloader($className){
         }
         echo '</ul>';
       ?>
-
 
       </div><!-- /.blog-main -->
     </div><!-- /.row -->
