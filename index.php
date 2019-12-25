@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    
 
     <?php
     require 'elements/header.php';
@@ -23,6 +24,7 @@
 
     <div class='container'>
         <h2>Welcome to our awesome blog site!</h2>
+        
     </div>
 
 

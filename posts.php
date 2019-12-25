@@ -38,10 +38,14 @@ function myAutoloader($className){
       <?php
         foreach ($posts as $post) {     
           echo '<div class="blog-post">';
-          echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $post["id"] . '">' . $post["title"] . '</a>' . '</h2>';
+          echo '<h2 class="blog-post-title">' . '<a id="naslov2" href="single-post.php?id=' . $post["id"] . '">' . $post["title"] . '</a>' . '</h2>';
           echo '<p class="blog-post-meta">' . $post['created_at'] . ' by ' . '<a href="#">' . $post['author'] . '</a></p>';
           echo '<p>' . $post['body'] . '</p><hr></div>';
         }
+        /*
+        <a id=' href="http://"></a>
+        
+        */
       ?>
         
 

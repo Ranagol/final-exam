@@ -1,0 +1,36 @@
+html{
+  font-size: 14px;
+}
+
+#navbar2{
+  background-color: #b34848;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+a {
+  color: #b34848;
+}
+
+#naslov2{
+  color: #b34848;
+}
+
+#naslov2:hover{
+  color: #b34848;
+}
+
+
+
+
+
