@@ -4,7 +4,7 @@
 require 'autoload.php';
 
 
-var_dump($_POST);
+//var_dump($_POST);
 
 if (isset($_POST)) {
   //echo 'Post is set';
@@ -12,6 +12,6 @@ if (isset($_POST)) {
   $deleteComment = new DbDeleting;
   $deleteComment->connectToDb();
   $deleteComment->deleteComment($_POST['commentId']);
-  //header('Location: single-post.php?id=' . $_POST['post_id']);//trebace nam i post_id na ovoj strani...
-  //die();
+  header('Location: single-post.php?id=' . $_POST['postIdFromComments']);//trebace nam i post_id na ovoj strani...
+  die();
 } 

@@ -73,12 +73,14 @@ require 'autoload.php';
 
             //DELETE BUTTON FORM
             $commentId = $comment['id'];
+            $postIdFromComments = $comment['post_id'];
 
             $html = "
               <div>
                 <form action='delete-comment.php' method='post'>
                   <button class='btn btn-outline-danger' name='delete' value='delete'>Delete comment</button>
                   <input type='hidden' name='commentId' value='$commentId'>
+                  <input type='hidden' name='postIdFromComments' value='$postIdFromComments'>
                 </form>
                 <hr>
               </div></div>
