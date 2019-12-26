@@ -30,6 +30,7 @@ require 'autoload.php';
     <div class="row">
       <div class="col-sm-8 blog-main">
       <?php
+      //PRIKAZIVANJE POSTOVA NA POSTS STRANI GDE IMAMO SAMO LINK
         foreach ($posts as $post) {     
           echo '<div class="blog-post">';
           echo '<h2 class="blog-post-title">' . '<a id="naslov2" href="single-post.php?id=' . $post["id"] . '">' . $post["title"] . '</a>' . '</h2>';

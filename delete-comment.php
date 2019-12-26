@@ -12,6 +12,6 @@ if (isset($_POST)) {
   $deleteComment = new DbDeleting;
   $deleteComment->connectToDb();
   $deleteComment->deleteComment($_POST['commentId']);
-  header('Location: single-post.php?id=' . $_POST['postIdFromComments']);//trebace nam i post_id na ovoj strani...
+  header('Location: single-post.php?id=' . $_POST['postIdFromComments']);
   die();
 } 

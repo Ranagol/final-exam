@@ -30,7 +30,7 @@ require 'autoload.php';
       <div class="col-sm-8 blog-main">
       <?php
         
-        //OVO JE POST DEO
+        //DETALJNO PRIKAZIVANJE POJEDINACNOG POSTA
         echo '<div class="blog-post">';
         echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $singlePost[0]["id"] . '">' . $singlePost[0]["title"] . '</a>' . '</h2>';
 
@@ -71,7 +71,7 @@ require 'autoload.php';
               echo '<li>' . $comment['author'] . ': ' . $comment['text'] . '</li>';
             echo '</div>';
 
-            //DELETE BUTTON FORM
+            //BRISANJE KOMENTARA
             $commentId = $comment['id'];
             $postIdFromComments = $comment['post_id'];
 
@@ -86,12 +86,9 @@ require 'autoload.php';
               </div></div>
             ";
             echo $html;
-
-          
-          
         }
         echo '</ul>';
-        //
+        
       ?>
 
       <!-- SIDEBAR -->
