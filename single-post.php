@@ -40,8 +40,8 @@ require 'autoload.php';
       ?>
       <!--BRISANJE POSTA-->
       <form action="delete-post.php" method="post" >
-        <button class="btn btn-danger"  name='delete' value='delete'>Delete post</button>
-        <input type='hidden' name='postId' value="<?php echo $singlePost[0]["id"]?>">
+        <button id="delete-post" class="btn btn-danger"  name='delete' value='delete'>Delete post</button>
+        <input type='hidden' name='postId' value="<?php //echo $singlePost[0]["id"]?>">
         <br>
         <hr>
       </form>
@@ -114,7 +114,7 @@ require 'autoload.php';
   <?php
     require 'elements/footer.php';
   ?>
-
+  <script src="delete.js"></script>
 </body>
 
 </html>
