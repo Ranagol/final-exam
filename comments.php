@@ -18,11 +18,18 @@
   
   ?>
 
-  <div class='container'>
-    <h2>Komentari</h2>
   
-  </div>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+        <h2>Komentari</h2>
 
+      </div><!-- /.blog-main -->
+      <?php
+        require 'elements/sidebar.php';
+      ?>
+    </div><!-- /.row -->
+  </main><!-- /.container --> 
 
   <?php
     require 'elements/footer.php';

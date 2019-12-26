@@ -60,6 +60,9 @@ require 'autoload.php';
       ?>
 
       </div><!-- /.blog-main -->
+        <?php
+          require 'elements/sidebar.php';
+        ?>
     </div><!-- /.row -->
   </main><!-- /.container -->
 
