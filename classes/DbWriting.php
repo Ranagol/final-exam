@@ -27,7 +27,16 @@ class DbWriting{
     } else{
       //echo 'mySQL query successfull';
     }
-    
-    //return;
   }
+
+  public function insertPost($title, $body, $author){
+    $sql = "INSERT INTO posts (title, body, author) VALUES('$title', '$body','$author')";
+    $result = mysqli_query($this->conn, $sql);
+    if (!$result) {
+      echo 'mySQL query failed';
+    } else{
+      //echo 'mySQL query successfull';
+    }
+  }
+
 }

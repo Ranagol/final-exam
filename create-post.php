@@ -15,14 +15,13 @@
 
   <?php
     require 'elements/header.php';
-  
   ?>
 
   
   <main role="main" class="container">
     <div class="row">
       <div class="col-sm-8 blog-main">
-        <h2>Create new post</h2>
+        <h2>Kreiraj novi post</h2>
 
         <form action="postsController.php" method="post">
           <div class="form-group">
