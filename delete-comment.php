@@ -5,16 +5,13 @@ require 'autoload.php';
 
 
 var_dump($_POST);
-/*
+
 if (isset($_POST)) {
   //echo 'Post is set';
 
-  $dbInsert = new DbWriting;
-  $dbInsert->connectToDb();
-  $dbInsert->insertComment($author, $text, $post_id);
-  header('Location: single-post.php?id=' . $_POST['post_id']);
-  die();
-} else {
-  //echo "POST is not set";
-}
-  //var_dump($author);*/
+  $deleteComment = new DbDeleting;
+  $deleteComment->connectToDb();
+  $deleteComment->deleteComment($_POST['commentId']);
+  //header('Location: single-post.php?id=' . $_POST['post_id']);//trebace nam i post_id na ovoj strani...
+  //die();
+} 
