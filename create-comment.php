@@ -7,18 +7,23 @@ require 'autoload.php';
 //var_dump($_POST);
 if (isset($_POST)) {
   //echo 'Post is set';
-  $author = htmlspecialchars($_POST['author']);
-  $text = htmlspecialchars($_POST['text']);
-  $post_id = htmlspecialchars($_POST['post_id']);
+  //VALIDACIJA I NAMESTANJE VARIJABLI IZ POST GLOBALA
+  $proveraStringova = new Validator;
+  $author = $proveraStringova->validacija($_POST['author']);
+  $text = $proveraStringova->validacija($_POST['text']);
+  $post_id = $proveraStringova->validacija($_POST['post_id']);
+
+
+  //RAD SA DATABAZOM
   $dbInsert = new DbWriting;
   $dbInsert->connectToDb();
   $dbInsert->insertComment($author, $text, $post_id);
   header('Location: single-post.php?id=' . $_POST['post_id']);
   die();
-} else {
-  //echo "POST is not set";
-}
-  //var_dump($author);
+} 
+
+ 
+
 
 
 
