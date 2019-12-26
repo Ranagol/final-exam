@@ -30,6 +30,12 @@ a {
   color: #b34848;
 }
 
+#div-comment{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 
 
