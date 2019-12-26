@@ -2,7 +2,6 @@
 require 'autoload.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +26,6 @@ require 'autoload.php';
   ?>
 
   <main role="main" class="container">
-    
     <div class="row">
       <div class="col-sm-8 blog-main">
       <?php
@@ -38,11 +36,15 @@ require 'autoload.php';
         echo '<p class="blog-post-meta">' . $singlePost[0]['created_at'] . ' by ' . '<a href="#">' . $singlePost[0]['author'] . '</a></p>';
         echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
       ?>
+
       <!--NAPISI KOMENTAR-->
-      <form action="" method="post">
+      <form action="create-comment.php" method="post">
         <div class="form-group">
           <label for="komentari">Napisi komentar</label>
-          <textarea class="form-control" id = 'komentari' name="comment" placeholder = "Ja mislim da..."  rows="3"></textarea>
+          <textarea class="form-control" id = 'komentari' name="text" placeholder = "Ja mislim da..."  rows="3" required></textarea>
+          <label for="imena" >Upisi ime (obavezno)</label>
+          <input class="form-control" placeholder='Ime' id="imena" name='author' type="text" required>
+          <input type="hidden" name="post_id" value="<?php echo $singlePost[0]["id"] ?>" />
         </div>
         <input class="btn btn-success" type="submit" value="Posalji komentar">
       </form>
@@ -59,11 +61,12 @@ require 'autoload.php';
         echo '</ul>';
       ?>
 
+      <!-- SIDEBAR -->
       </div><!-- /.blog-main -->
         <?php
           require 'elements/sidebar.php';
         ?>
-    </div><!-- /.row -->
+      </div><!-- /.row -->
   </main><!-- /.container -->
 
 

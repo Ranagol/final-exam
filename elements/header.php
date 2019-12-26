@@ -8,7 +8,7 @@
         <a class="nav-link" href="index.php">Pocetna strana</a>
         <a class="nav-link" href="posts.php">Postovi</a>
         <a class="nav-link" href="create-post.php">Kreiraj novi post</a>
-        <a class="nav-link" href="comments.php">Komentari</a>
+        <a class="nav-link" href="create-comment.php">Kreiraj novi KOMENT - PRIVREMENOOOO</a>
       </nav>
     </div>
   </div>

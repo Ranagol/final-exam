@@ -18,7 +18,7 @@ class Db{
     //echo "Connected successfully3";
   }
 
-  public function getPosts(){//ORIGINAL GETPOSTS
+  public function getPosts(){
     $sql = "SELECT id, title,body, author, created_at FROM posts ORDER BY created_at DESC";
     $result = mysqli_query($this->conn, $sql);
     $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);//creating loopable arrays
