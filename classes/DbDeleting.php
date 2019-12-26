@@ -23,4 +23,12 @@ class DbDeleting{
     $result = mysqli_query($this->conn, $sql);
     
   }
+
+  public function deletePost($postId){
+    $sql = "DELETE FROM posts WHERE id = $postId";
+    $result = mysqli_query($this->conn, $sql);
+    
+  }
+
+
 }

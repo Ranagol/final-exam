@@ -38,6 +38,15 @@ require 'autoload.php';
 
         echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
       ?>
+      <!--BRISANJE POSTA-->
+      <form action="delete-post.php" method="post" >
+        <button class="btn btn-danger"  name='delete' value='delete'>Delete post</button>
+        <input type='hidden' name='postId' value="<?php echo $singlePost[0]["id"]?>">
+        <br>
+        <hr>
+      </form>
+
+
 
       <!--NAPISI KOMENTAR-->
       <form action="create-comment.php" method="post">

@@ -112,7 +112,10 @@
             </nav>
 
         </div><!-- /.blog-main -->
-
+<form action="delete-post.php" method="post" >
+    <button class="btn btn-outline-warning"  name='delete' value='delete'>Delete post</button>
+    <input type='hidden' name='commentId' value='$commentId'>
+</form>
         <aside class="col-sm-3 ml-sm-auto blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
