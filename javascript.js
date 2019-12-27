@@ -12,21 +12,3 @@ hideCommentsButton.addEventListener("click", function(){
 })
 
 
-
-
-
-//DELETE POST  ON SINGLE-POST SIDE
-/*
-var deleteButton = document.getElementById("delete-button");
-
-deleteButton.addEventListener("click", function(){
-  
-  var question = prompt("Do you really want to delete this post? Answer with yes/no please.");
-  if (question =="yes") {
-    //enable deleting
-    
-  }
-  
-});
-
-*/
