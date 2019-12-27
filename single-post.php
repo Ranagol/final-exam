@@ -69,8 +69,21 @@ require 'autoload.php';
       <?php  
         
         //KOMENTARI POVUCENI IZ DB
+        
         echo '<hr>';
-        echo '<h4 class="blog-post">Komentari</h4>';
+        echo '<div id="div-comment">';
+
+          echo '<div>';
+            echo '<h4 class="blog-post">Komentari</h4>';
+          echo '</div>';
+
+          echo '<div>';
+            echo '<button id="hideComments" class="btn btn-outline-primary">Hide comments</button>';
+          echo '</div>';
+
+        echo '</div>';
+        
+        
         echo '<ul>';
         
         //PRIKAZIVANJE KOMENTARA
