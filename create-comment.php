@@ -6,11 +6,24 @@ require 'autoload.php';
 //var_dump($_POST);
 if (isset($_POST)) {
   //echo 'Post is set';
-  //VALIDACIJA I NAMESTANJE VARIJABLI IZ POST GLOBALA
+  
+
+  //NAMESTANJE VARIJABLI
+  $author = $_POST['author'];
+  $text = $_POST['text'];
+  $post_id = $_POST['post_id'];
+
+  //VALIDACIJA DA LI SU POLJA PRAZNA
   $proveraStringova = new Validator;
-  $author = $proveraStringova->validacija($_POST['author']);
-  $text = $proveraStringova->validacija($_POST['text']);
-  $post_id = $proveraStringova->validacija($_POST['post_id']);
+  $author = $proveraStringova->isNotEmptyString($author);
+  $text = $proveraStringova->isNotEmptyString($text);
+  $post_id = $proveraStringova->isNotEmptyString($post_id);
+
+
+  //VALIDACIJA < > / ... PROBLEMATICNIH KARAKTERA
+  $author = $proveraStringova->removeSpecialCharacters($author);
+  $text = $proveraStringova->removeSpecialCharacters($text);
+  $post_id = $proveraStringova->removeSpecialCharacters($post_id);
 
 
   //RAD SA DATABAZOM

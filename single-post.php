@@ -56,14 +56,25 @@
 
 
     <!--NAPISI KOMENTAR-->
+    
     <form action="create-comment.php" method="post">
       <div class="form-group">
 
+        <!--SPECIJALNI DIV ZA POZIVANJE UPOZORENJA ZA PRAZNE FIELDOVE-->
+        <div  
+          <?php 
+            if (!isset($_GET['hasValidationError'])){//ako postoji hasvalidation varijabla u GET, onda echo hidden
+              echo 'hidden';
+            }
+          ?>
+         class="alert alert-danger">Kod slanja komentara polja sa imenom i sa komentarom moraju biti popunjena.</div>
+
+        <!--FORMA ZA PISANJE KOMENTARA-->
         <label for="komentari">Napisi komentar</label>
-        <textarea class="form-control" id = 'komentari' name="text" placeholder = "Ja mislim da..."  rows="3" required></textarea>
+        <textarea class="form-control" id = 'komentari' name="text" placeholder = "Ja mislim da..."  rows="3"></textarea><!--required namerno izostavljen-->
         
         <label for="imena" >Upisi ime (obavezno)</label>
-        <input class="form-control" placeholder='Ime' id="imena" name='author' type="text" required>
+        <input class="form-control" placeholder='Ime' id="imena" name='author' type="text" ><!--required namerno izostavljen-->
         
         <input type="hidden" name="post_id" value="<?php echo $singlePost[0]["id"] ?>" /><!--hidden post_id 
         sending in the background -->
