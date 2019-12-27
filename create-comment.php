@@ -1,6 +1,5 @@
 <?php
 
-
 require 'autoload.php';
 
 //UPISATI PODATAK U BAZU
@@ -18,7 +17,8 @@ if (isset($_POST)) {
   $dbInsert = new DbWriting;
   $dbInsert->connectToDb();
   $dbInsert->insertComment($author, $text, $post_id);
-  header('Location: single-post.php?id=' . $_POST['post_id']);
+
+  header('Location: single-post.php?id=' . $_POST['post_id']);//WILL RE-ROUTE AFTER CREATING A NEW COMMENT IN THE DB
   die();
 } 
 
