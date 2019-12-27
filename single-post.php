@@ -74,16 +74,16 @@ require 'autoload.php';
         echo '<div id="div-comment">';
 
           echo '<div>';
-            echo '<h4 class="blog-post">Komentari</h4>';
+            echo '<h4 class="blog-post">Komentari</h4>';//NASLOV KOMENTARA
           echo '</div>';
 
           echo '<div>';
-            echo '<button id="hideComments" class="btn btn-outline-primary">Hide comments</button>';
+            echo '<button id="hide-button" class="btn btn-outline-primary">Hide comments</button>';
           echo '</div>';
 
         echo '</div>';
         
-        
+        echo '<div id="div-hide">';//OK, OVAJ DIV ZELIMO DA HIDEUJEMO
         echo '<ul>';
         
         //PRIKAZIVANJE KOMENTARA
@@ -110,7 +110,7 @@ require 'autoload.php';
             echo $html;
         }
         echo '</ul>';
-        
+        echo '</div>';
       ?>
 
       <!-- SIDEBAR -->
@@ -127,7 +127,7 @@ require 'autoload.php';
   <?php
     require 'elements/footer.php';
   ?>
-  <script src="delete.js"></script>
+  <script src="javascript.js"></script>
 </body>
 
 </html>
