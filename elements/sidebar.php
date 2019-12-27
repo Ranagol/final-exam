@@ -2,7 +2,7 @@
     require_once 'autoload.php';
     $connect = new Db;
     $connect->connectToDb();
-    $posts = $connect->getPosts();
+    $posts = $connect->get5Posts();
   ?>
 
 

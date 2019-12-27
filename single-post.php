@@ -32,20 +32,26 @@ require 'autoload.php';
         
         //DETALJNO PRIKAZIVANJE POJEDINACNOG POSTA
         echo '<div class="blog-post">';
-        echo '<h2 class="blog-post-title">' . '<a href="single-post.php?id=' . $singlePost[0]["id"] . '">' . $singlePost[0]["title"] . '</a>' . '</h2>';
+        echo '<h2 class="blog-post-title">' .  $singlePost[0]["title"] . '</h2>';
 
         echo '<p class="blog-post-meta">' . $singlePost[0]['created_at'] . ' by ' . '<a href="#">' . $singlePost[0]['author'] . '</a></p>';
 
         echo '<p>' . $singlePost[0]['body'] . '</p><hr></div>';
       ?>
+
+
       <!--BRISANJE POSTA-->
+
       <form action="delete-post.php" method="post" >
-        <button id="delete-post" class="btn btn-danger"  name='delete' value='delete'>Delete post</button>
-        <input type='hidden' name='postId' value="<?php //echo $singlePost[0]["id"]?>">
+
+        <!--BUTTON-->
+        <button  id="delete-button" class="btn btn-danger delete-button"  name='delete' value='delete'>Delete post</button>
+        <input type='hidden' name='postId' value="<?php echo $singlePost[0]["id"]?>">
         <br>
         <hr>
-      </form>
 
+      </form>
+      
 
 
       <!--NAPISI KOMENTAR-->
@@ -83,7 +89,7 @@ require 'autoload.php';
 
         echo '</div>';
         
-        echo '<div id="div-hide">';//OK, OVAJ DIV ZELIMO DA HIDEUJEMO
+        echo '<div id="div-hide">';//POMOCU OVOG DIVA SAKRIVAMO KOMENTARE
         echo '<ul>';
         
         //PRIKAZIVANJE KOMENTARA
