@@ -1,6 +1,6 @@
 <?php
     require_once 'autoload.php';
-    $connect = new Db;
+    $connect = new DbReading;
     $connect->connectToDb();
     $posts = $connect->get5Posts();
   ?>

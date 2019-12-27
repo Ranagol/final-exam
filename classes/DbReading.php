@@ -1,22 +1,7 @@
 <?php
 
-class Db{
-  private $servername = "localhost";
-  private $username = "root";
-  private $password = "";
-  public $conn;
-  private $dbname = "final-exam";
-
+class DbReading extends DbConnection{
   
-  public function connectToDb() {
-    // Create connection
-    $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
-    // Check connection
-    if (!$this->conn) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
-    //echo "Connected successfully3";
-  }
 
   public function getPosts(){
     $sql = "SELECT id, title,body, author, created_at FROM posts ORDER BY created_at DESC";

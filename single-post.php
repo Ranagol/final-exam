@@ -19,7 +19,7 @@ require 'autoload.php';
 
   <?php
     require 'elements/header.php';
-    $connect = new Db;
+    $connect = new DbReading;
     $connect->connectToDb();
     $singlePost = $connect->getSinglePost($_GET['id']);
     $comments = $connect->getComments($_GET['id']);
