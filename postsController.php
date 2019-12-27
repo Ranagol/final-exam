@@ -9,9 +9,9 @@ if (isset($_POST)) {
   //echo 'Post is set';
   //VALIDACIJA I NAMESTANJE VARIJABLI IZ POST GLOBALA
   $proveraStringova = new Validator;
-  $title = $proveraStringova->validacija($_POST['title']);
-  $body = $proveraStringova->validacija($_POST['body']);
-  $author = $proveraStringova->validacija($_POST['author']);
+  $title = $proveraStringova->removeSpecialCharacters($_POST['title']);
+  $body = $proveraStringova->removeSpecialCharacters($_POST['body']);
+  $author = $proveraStringova->removeSpecialCharacters($_POST['author']);
 
 
   //RAD SA DATABAZOM

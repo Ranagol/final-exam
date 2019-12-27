@@ -47,7 +47,7 @@
               <input type='hidden' name='postId' value="<?php echo $singlePost[0]["id"]?>">
               
             </form>
-            <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>-->
+            
             <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
           </div>
         </div>

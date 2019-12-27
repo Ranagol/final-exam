@@ -1,6 +1,6 @@
 <?php
 
-class DbConnection{
+abstract class DbConnection{
   protected $servername = "localhost";
   protected $username = "root";
   protected $password = "";
